@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://GFX/PNG/Hitman 1/hitman1_stand.png" type="Texture" id=2]
@@ -8,6 +8,13 @@
 custom_solver_bias = 0.0
 radius = 10.0495
 height = 24.1953
+
+[sub_resource type="OccluderPolygon2D" id=2]
+
+closed = true
+cull_mode = 1
+polygon = PoolVector2Array( -1.53454, -21.4582, -6.82052, -21.1172, -10.9129, -15.9165, -11.8507, -6.79392, -14.4937, -1.08165, -13.8969, 4.37485, -11.2171, 9.62692, -10.3121, 17.8849, -6.74867, 21.4483, 1.96103, 21.4264, 6.37365, 18.394, 8.71948, 7.39794, 12.5532, -0.683916, 8.46371, -7.35165, 7.01317, -16.6116, 4.01231, -20.9205 )
+_sections_unfolded = [ "Resource" ]
 
 [node name="Character" type="KinematicBody2D"]
 
@@ -28,5 +35,11 @@ visible = false
 position = Vector2( -1.7434, -0.193712 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="2"]
+
+occluder = SubResource( 2 )
+light_mask = 1
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 
