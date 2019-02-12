@@ -3,14 +3,9 @@ extends "res://Scripts/Character.gd"
 var motion = Vector2()
 
 func _ready():
+	Global.Player = self
 	pass
 
-
-func _process(delta):
-	
-#	ligar_lanterna()
-	
-	pass
 
 func _physics_process(delta):
 	
@@ -21,7 +16,7 @@ func _physics_process(delta):
 
 func update_motion(delta):
 	
-	look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position()) # Faz o node rotacionar e ficar sempre virado para o mouse
 	
 	if Input.is_action_pressed("ui_up") and not Input.is_action_pressed("ui_down"):
 		motion.y = clamp((motion.y - SPEED), -MAX_SPEED , 0)
@@ -37,6 +32,10 @@ func update_motion(delta):
 		motion.x = lerp(motion.x, 0 , FRICTION)
 	pass
 	
+
+
+
+
 #func ligar_lanterna():
 #
 #	if Input.is_action_just_pressed("toggle_flashlight"):

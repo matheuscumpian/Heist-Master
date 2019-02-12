@@ -7,6 +7,7 @@
 [node name="Player" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
+_sections_unfolded = [ "Collision" ]
 
 [node name="Light2D" type="Light2D" parent="." index="3"]
 
