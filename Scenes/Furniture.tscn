@@ -1,0 +1,134 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 27.4088, 26.5293 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 91.9999, 29 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 50.5933, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 89.7757, 18.9898 )
+
+[node name="Forniture" type="Node2D"]
+
+[node name="PoltronaLaranja" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1088, 1088, 64, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PoltronaLaranja" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PoltronaLaranja/StaticBody2D" index="0"]
+
+visible = false
+shape = SubResource( 1 )
+
+[node name="Mesa" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 158.84, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1280, 1024, 192, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mesa" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesa/StaticBody2D" index="0"]
+
+visible = false
+shape = SubResource( 2 )
+
+[node name="Televisao" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 321.095, -0.663422 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1152, 1216, 128, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Televisao" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Televisao/StaticBody2D" index="0"]
+
+visible = false
+shape = SubResource( 3 )
+
+[node name="Sofa" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 483.817, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 896, 1152, 192, 64 )
+_sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sofa" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sofa/StaticBody2D" index="0"]
+
+visible = false
+shape = SubResource( 4 )
+
+
