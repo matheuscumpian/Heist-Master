@@ -1,6 +1,8 @@
 extends Area2D
 
 var is_on_range = false
+signal exited
+
 
 func _on_Door_body_entered(body):
 	if body != Global.Player and not $AnimationPlayer.is_playing():
@@ -13,11 +15,21 @@ func _on_Door_body_entered(body):
 
 
 func _on_Door_body_exited(body):
-	
-	
+	if body == Global.Player:
+		is_on_range = false
+		emit_signal("exited")
 	
 	pass
 
+
+func _input(event):
+	
+	if Input.is_action_just_pressed("door") and is_on_range and not $AnimationPlayer.is_playing():
+		$AnimationPlayer.play("door")
+		
+	
+	
+	pass
 
 func open():
 	

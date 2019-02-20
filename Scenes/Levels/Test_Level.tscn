@@ -1,17 +1,18 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Navigation2D.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Destinations.gd" type="Script" id=2]
 [ext_resource path="res://Tilesets/Floor.tres" type="TileSet" id=3]
 [ext_resource path="res://Tilesets/Forniture.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Characters/SecurityCamera.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Tilesets/tilemap.tres" type="TileSet" id=7]
-[ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scripts/VisionMode.gd" type="Script" id=9]
-[ext_resource path="res://SFX/nightvision_off.wav" type="AudioStream" id=10]
-[ext_resource path="res://SFX/nightvision.wav" type="AudioStream" id=11]
-[ext_resource path="res://Scenes/Characters/Guard.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/LockedDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Characters/SecurityCamera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Tilesets/tilemap.tres" type="TileSet" id=8]
+[ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/VisionMode.gd" type="Script" id=10]
+[ext_resource path="res://SFX/nightvision_off.wav" type="AudioStream" id=11]
+[ext_resource path="res://SFX/nightvision.wav" type="AudioStream" id=12]
+[ext_resource path="res://Scenes/Characters/Guard.tscn" type="PackedScene" id=13]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -19,7 +20,7 @@ vertices = PoolVector2Array( 1608.93, 264.15, 1914, 266, 1994.12, 385.895, 1912.
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 12, 11, 9, 13 ), PoolIntArray( 14, 8, 15, 16 ), PoolIntArray( 17, 15, 8, 7, 18 ), PoolIntArray( 15, 17, 2 ), PoolIntArray( 1, 15, 2 ), PoolIntArray( 17, 18, 19, 20 ), PoolIntArray( 21, 3, 20, 22 ), PoolIntArray( 3, 21, 4 ), PoolIntArray( 5, 4, 23 ), PoolIntArray( 24, 25, 26, 27 ), PoolIntArray( 13, 5, 23, 28, 29 ), PoolIntArray( 19, 10, 11, 22, 20 ), PoolIntArray( 28, 21, 22, 29 ), PoolIntArray( 13, 29, 12 ), PoolIntArray( 30, 13, 9 ), PoolIntArray( 30, 9, 27, 26 ), PoolIntArray( 31, 32, 33, 34 ), PoolIntArray( 35, 34, 33, 36 ), PoolIntArray( 27, 35, 36, 14, 37 ), PoolIntArray( 16, 38, 39, 14 ), PoolIntArray( 40, 1, 0, 41 ), PoolIntArray( 37, 6, 5, 24, 27 ), PoolIntArray( 41, 37, 14, 40 ), PoolIntArray( 40, 14, 39 ) ]
 outlines = [ PoolVector2Array( 77.9457, 214.178, 900.971, 203.598, 901.839, 71.6931, 2165.71, 79.0827, 2167.56, 691.637, 1037.48, 691.637, 1035.31, 184.628, 955.913, 183.589, 955.33, 379.345, 78.9775, 375.182 ), PoolVector2Array( 1917, 136, 1993, 133, 1993, 188, 2114, 189, 2117, 267, 1914, 266 ), PoolVector2Array( 1530.73, 264.15, 1608.93, 264.15, 1607.3, 186.772, 1529.92, 185.957 ), PoolVector2Array( 1603.73, 384.077, 1604.27, 453.243, 1534.57, 453.783, 1534.03, 385.698 ), PoolVector2Array( 1602.64, 576.396, 1602.64, 646.133, 1533.39, 645.646, 1533.39, 576.396 ), PoolVector2Array( 1994.12, 385.895, 1994.12, 455.274, 1913.86, 453.914, 1912.5, 385.895 ), PoolVector2Array( 1918, 570, 1917, 648, 1991, 647, 1989, 579 ), PoolVector2Array( 1276, 383, 1275, 576, 1146.38, 574.091, 1143.36, 648.999, 1351.36, 649.999, 1354.96, 382.373 ), PoolVector2Array( 1215.7, 388.559, 1215.7, 576.403, 1277.09, 577.631, 1275.86, 388.559 ), PoolVector2Array( 1704.23, 255.337, 1660.7, 258.058, 1663.42, 321.995, 1721.91, 319.274, 1723.27, 376.41, 1660.7, 381.852, 1667.5, 451.231, 1857.95, 447.15, 1851.15, 383.212, 1798.09, 383.212, 1799.45, 326.076, 1853.87, 327.437, 1848.43, 251.256 ), PoolVector2Array( 1725.89, 85.662, 1729.22, 123.335, 1849.99, 120.011, 1846.67, 77.9058 ), PoolVector2Array( 1745.41, 637.905, 1846.49, 637.002, 1843.78, 701.08, 1726.45, 699.275, 1727.36, 642.417 ), PoolVector2Array( 2143.41, 387.912, 2119.04, 387.912, 2117.24, 508.847, 2171.39, 506.14, 2168.68, 387.912 ), PoolVector2Array( 920.109, 508.594, 891.44, 510.064, 896.586, 574.017, 958.334, 573.282, 959.069, 510.064 ), PoolVector2Array( 801.158, 458.05, 781.256, 456.723, 780.592, 568.841, 813.763, 567.514, 814.427, 456.723, 795.851, 459.377 ), PoolVector2Array( 664.212, 508.628, 637.137, 509.53, 637.137, 573.607, 698.507, 574.51, 698.507, 509.53 ), PoolVector2Array( 547.79, 461.697, 525.227, 461.697, 527.032, 560.07, 556.815, 560.972, 555.01, 460.795 ), PoolVector2Array( 397.481, 515.324, 441.266, 518.641, 441.93, 567.734, 390.183, 573.041, 388.193, 517.977 ), PoolVector2Array( 282.641, 462.201, 301.88, 463.528, 301.217, 565.032, 275.343, 562.378, 277.333, 462.201 ), PoolVector2Array( 119.929, 514.349, 69.2076, 513.614, 72.883, 580.507, 124.339, 577.567 ), PoolVector2Array( 153.136, 70.6439, 133.896, 72.6342, 133.233, 126.371, 187.633, 129.025, 187.633, 72.6342 ) ]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Navigation2D" type="Navigation2D" parent="." index="0"]
 
@@ -130,7 +131,7 @@ collision_layer = 1
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( 65538, -1073741824, 0, 65542, -1073741824, 0, 65545, -1073741824, 0, 65548, -1073741824, 0, 65564, 1610612738, 0, 262170, -1610612736, 0, 262172, -1073741824, 0, 393235, -1610612736, 0, 393242, -1610612736, 0, 393243, -1073741823, 0, 393244, -1073741824, 0, 458756, -1610612734, 0, 458760, -1610612734, 0, 458764, -1610612734, 0, 458771, -1610612736, 0, 458785, -1073741822, 0, 524289, -1610612736, 0, 524294, -1073741824, 0, 524298, -1073741824, 0, 524302, -1073741824, 0, 524307, -1610612736, 0, 655387, 2, 0 )
+tile_data = PoolIntArray( 65538, -1073741824, 0, 65542, -1073741824, 0, 65545, -1073741824, 0, 65548, -1073741824, 0, 65564, 1610612738, 0, 262170, -1610612736, 0, 262172, -1073741824, 0, 393235, -1610612736, 0, 393242, -1610612736, 0, 393243, -1073741823, 0, 393244, -1073741824, 0, 458756, -1610612734, 0, 458760, -1610612734, 0, 458764, -1610612734, 0, 458771, -1610612736, 0, 458785, -1073741822, 0, 524289, -1610612736, 0, 524294, -1073741824, 0, 524298, -1073741824, 0, 524302, -1073741824, 0, 524307, -1610612736, 0 )
 
 [node name="Portas" type="Node2D" parent="." index="3"]
 
@@ -142,43 +143,45 @@ position = Vector2( 544.151, 165.217 )
 
 position = Vector2( 735.177, 163.415 )
 
-[node name="Door3" parent="Portas" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( 928.299, 185.527 )
-
-[node name="Door4" parent="Portas" index="3" instance=ExtResource( 5 )]
+[node name="Door4" parent="Portas" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 928.806, 415.934 )
 
-[node name="Door5" parent="Portas" index="4" instance=ExtResource( 5 )]
+[node name="Door5" parent="Portas" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 671.525, 413.728 )
 
-[node name="Door6" parent="Portas" index="5" instance=ExtResource( 5 )]
+[node name="Door6" parent="Portas" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 414.979, 415.198 )
 
-[node name="Door7" parent="Portas" index="6" instance=ExtResource( 5 )]
+[node name="Door7" parent="Portas" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 160.24, 416.706 )
 
-[node name="Door8" parent="Portas" index="7" instance=ExtResource( 5 )]
+[node name="Door8" parent="Portas" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 97.2077, 166.718 )
 
+[node name="PortasTrancadas" type="Node2D" parent="Portas" index="7"]
+
+[node name="LockedDoor" parent="Portas/PortasTrancadas" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 928.006, 185.3 )
+
 [node name="Cameras" type="Node2D" parent="." index="4"]
 
-[node name="SecurityCamera" parent="Cameras" index="0" instance=ExtResource( 6 )]
+[node name="SecurityCamera" parent="Cameras" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 68.4932, 276.837 )
 
-[node name="SecurityCamera2" parent="Cameras" index="1" instance=ExtResource( 6 )]
+[node name="SecurityCamera2" parent="Cameras" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 1177.67, 67.3614 )
 rotation = 1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="SecurityCamera3" parent="Cameras" index="2" instance=ExtResource( 6 )]
+[node name="SecurityCamera3" parent="Cameras" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 1776.81, 701.472 )
 rotation = -1.5708
@@ -188,7 +191,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 0, 3 )
 mode = 0
-tile_set = ExtResource( 7 )
+tile_set = ExtResource( 8 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -206,7 +209,7 @@ format = 1
 tile_data = PoolIntArray( 0, 0, 262153, 1, 0, 262155, 2, 0, 262155, 3, 0, 262156, 4, 0, 262155, 5, 0, 262155, 6, 0, 262155, 7, 0, 262156, 8, 0, 262155, 9, 0, 262155, 10, 0, 262156, 11, 0, 262155, 12, 0, 262155, 13, 0, 262156, 14, 0, 262155, 15, 0, 262155, 16, 0, 262155, 17, 0, 262155, 18, 0, 262155, 19, 0, 262155, 20, 0, 262155, 21, 0, 262155, 22, 0, 262155, 23, 0, 262155, 24, 0, 262155, 25, 0, 262155, 26, 0, 262155, 27, 0, 262155, 28, 0, 262155, 29, 0, 262155, 30, 0, 262155, 31, 0, 262155, 32, 0, 262155, 33, 0, 262155, 34, 0, 262154, 65536, 0, 327691, 65539, 0, 327691, 65543, 0, 327691, 65546, 0, 327691, 65549, 0, 327691, 65570, 0, 327691, 131072, 0, 327691, 131074, 0, 327695, 131075, 0, 327690, 131078, 0, 327695, 131079, 0, 327690, 131081, 0, 327695, 131082, 0, 327690, 131084, 0, 327695, 131085, 0, 327690, 131102, 0, 327694, 131106, 0, 327691, 196608, 0, 327691, 196623, 0, 327694, 196632, 0, 458767, 196638, 0, 327689, 196639, 0, 262155, 196640, 0, 262158, 196642, 0, 327691, 262144, 0, 327691, 262159, 0, 327691, 262178, 0, 327691, 327680, 0, 327691, 327695, 0, 327691, 327714, 0, 327691, 393216, 0, 327692, 393217, 0, 262158, 393219, 0, 262153, 393220, 0, 262155, 393221, 0, 262158, 393223, 0, 262153, 393224, 0, 262155, 393225, 0, 262158, 393227, 0, 262153, 393228, 0, 262155, 393229, 0, 262158, 393231, 0, 327691, 393236, 0, 327694, 393240, 0, 458767, 393246, 0, 458767, 393250, 0, 327691, 458752, 0, 327691, 458755, 0, 327691, 458759, 0, 327691, 458763, 0, 327691, 458767, 0, 327691, 458772, 0, 327691, 458786, 0, 327691, 524288, 0, 327691, 524291, 0, 327691, 524295, 0, 327691, 524299, 0, 327691, 524303, 0, 327691, 524308, 0, 327691, 524322, 0, 327691, 589824, 0, 327689, 589825, 0, 262155, 589826, 0, 262155, 589827, 0, 262157, 589828, 0, 262155, 589829, 0, 262155, 589830, 0, 262155, 589831, 0, 262157, 589832, 0, 262155, 589833, 0, 262155, 589834, 0, 262155, 589835, 0, 262157, 589836, 0, 262155, 589837, 0, 262155, 589838, 0, 262155, 589839, 0, 327693, 589842, 0, 327695, 589843, 0, 262155, 589844, 0, 327690, 589848, 0, 458767, 589854, 0, 458767, 589858, 0, 327691, 655375, 0, 327691, 655394, 0, 327691, 720911, 0, 327689, 720912, 0, 262155, 720913, 0, 262155, 720914, 0, 262155, 720915, 0, 262155, 720916, 0, 262155, 720917, 0, 262155, 720918, 0, 262155, 720919, 0, 262155, 720920, 0, 262155, 720921, 0, 262155, 720922, 0, 262155, 720923, 0, 262155, 720924, 0, 262155, 720925, 0, 262155, 720926, 0, 262155, 720927, 0, 262155, 720928, 0, 262155, 720929, 0, 262155, 720930, 0, 327690 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="Player" parent="." index="6" instance=ExtResource( 8 )]
+[node name="Player" parent="." index="6" instance=ExtResource( 9 )]
 
 position = Vector2( 548.822, 297.069 )
 collision_mask = 6
@@ -241,7 +244,7 @@ _sections_unfolded = [ "Smoothing" ]
 
 visible = false
 color = Color( 0.0901961, 0.0745098, 0.25098, 1 )
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 
 [node name="Timer" type="Timer" parent="VisionMode" index="0"]
 
@@ -252,7 +255,7 @@ autostart = false
 
 [node name="Off_Sownd" type="AudioStreamPlayer" parent="VisionMode" index="1"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 11 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -261,7 +264,7 @@ bus = "FX"
 
 [node name="On_Sound" type="AudioStreamPlayer" parent="VisionMode" index="2"]
 
-stream = ExtResource( 11 )
+stream = ExtResource( 12 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -277,19 +280,20 @@ autostart = false
 
 [node name="Guards" type="Node2D" parent="." index="8"]
 
-[node name="Guard" parent="Guards" index="0" instance=ExtResource( 12 )]
+[node name="Guard" parent="Guards" index="0" instance=ExtResource( 13 )]
 
-position = Vector2( 1465.73, 136.556 )
+position = Vector2( 1444.09, 130.374 )
 
-[node name="Guard2" parent="Guards" index="1" instance=ExtResource( 12 )]
+[node name="Guard2" parent="Guards" index="1" instance=ExtResource( 13 )]
 
-position = Vector2( 1428.06, 667.397 )
+position = Vector2( 1428.06, 664.306 )
+_sections_unfolded = [ "Collision", "Pause" ]
 
-[node name="Guard3" parent="Guards" index="2" instance=ExtResource( 12 )]
+[node name="Guard3" parent="Guards" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 160.889, 287.246 )
 
-[node name="Guard4" parent="Guards" index="3" instance=ExtResource( 12 )]
+[node name="Guard4" parent="Guards" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 2054.79, 105.733 )
 

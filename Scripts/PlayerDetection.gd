@@ -1,12 +1,12 @@
 extends "res://Scripts/Character.gd"
 
-const FOV_TOLERANCE = 22
+const FOV_TOLERANCE = 22 # Esse e o angulo de visao da "lanterna"
 
-const MAX_RANGE = 340
+const MAX_RANGE = 340 #Esse e o range foward da lanterna "pra frente"
 
-onready var Player = get_node("/root/Node2D/Player")
+onready var Player = get_node("/root/Node2D/Player") # pegando o node do Player na cena 
 
-onready var Lanterna_start_color = $Lanterna.color
+onready var Lanterna_start_color = $Lanterna.color # Pega a cor da lanterna assim que inicia o jogo
 
 func _ready():
 
