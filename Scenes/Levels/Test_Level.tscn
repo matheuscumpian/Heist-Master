@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Navigation2D.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Destinations.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://SFX/nightvision_off.wav" type="AudioStream" id=11]
 [ext_resource path="res://SFX/nightvision.wav" type="AudioStream" id=12]
 [ext_resource path="res://Scenes/Characters/Guard.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=14]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -20,7 +21,7 @@ vertices = PoolVector2Array( 1608.93, 264.15, 1914, 266, 1994.12, 385.895, 1912.
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6 ), PoolIntArray( 7, 8, 9, 10 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 12, 11, 9, 13 ), PoolIntArray( 14, 8, 15, 16 ), PoolIntArray( 17, 15, 8, 7, 18 ), PoolIntArray( 15, 17, 2 ), PoolIntArray( 1, 15, 2 ), PoolIntArray( 17, 18, 19, 20 ), PoolIntArray( 21, 3, 20, 22 ), PoolIntArray( 3, 21, 4 ), PoolIntArray( 5, 4, 23 ), PoolIntArray( 24, 25, 26, 27 ), PoolIntArray( 13, 5, 23, 28, 29 ), PoolIntArray( 19, 10, 11, 22, 20 ), PoolIntArray( 28, 21, 22, 29 ), PoolIntArray( 13, 29, 12 ), PoolIntArray( 30, 13, 9 ), PoolIntArray( 30, 9, 27, 26 ), PoolIntArray( 31, 32, 33, 34 ), PoolIntArray( 35, 34, 33, 36 ), PoolIntArray( 27, 35, 36, 14, 37 ), PoolIntArray( 16, 38, 39, 14 ), PoolIntArray( 40, 1, 0, 41 ), PoolIntArray( 37, 6, 5, 24, 27 ), PoolIntArray( 41, 37, 14, 40 ), PoolIntArray( 40, 14, 39 ) ]
 outlines = [ PoolVector2Array( 77.9457, 214.178, 900.971, 203.598, 901.839, 71.6931, 2165.71, 79.0827, 2167.56, 691.637, 1037.48, 691.637, 1035.31, 184.628, 955.913, 183.589, 955.33, 379.345, 78.9775, 375.182 ), PoolVector2Array( 1917, 136, 1993, 133, 1993, 188, 2114, 189, 2117, 267, 1914, 266 ), PoolVector2Array( 1530.73, 264.15, 1608.93, 264.15, 1607.3, 186.772, 1529.92, 185.957 ), PoolVector2Array( 1603.73, 384.077, 1604.27, 453.243, 1534.57, 453.783, 1534.03, 385.698 ), PoolVector2Array( 1602.64, 576.396, 1602.64, 646.133, 1533.39, 645.646, 1533.39, 576.396 ), PoolVector2Array( 1994.12, 385.895, 1994.12, 455.274, 1913.86, 453.914, 1912.5, 385.895 ), PoolVector2Array( 1918, 570, 1917, 648, 1991, 647, 1989, 579 ), PoolVector2Array( 1276, 383, 1275, 576, 1146.38, 574.091, 1143.36, 648.999, 1351.36, 649.999, 1354.96, 382.373 ), PoolVector2Array( 1215.7, 388.559, 1215.7, 576.403, 1277.09, 577.631, 1275.86, 388.559 ), PoolVector2Array( 1704.23, 255.337, 1660.7, 258.058, 1663.42, 321.995, 1721.91, 319.274, 1723.27, 376.41, 1660.7, 381.852, 1667.5, 451.231, 1857.95, 447.15, 1851.15, 383.212, 1798.09, 383.212, 1799.45, 326.076, 1853.87, 327.437, 1848.43, 251.256 ), PoolVector2Array( 1725.89, 85.662, 1729.22, 123.335, 1849.99, 120.011, 1846.67, 77.9058 ), PoolVector2Array( 1745.41, 637.905, 1846.49, 637.002, 1843.78, 701.08, 1726.45, 699.275, 1727.36, 642.417 ), PoolVector2Array( 2143.41, 387.912, 2119.04, 387.912, 2117.24, 508.847, 2171.39, 506.14, 2168.68, 387.912 ), PoolVector2Array( 920.109, 508.594, 891.44, 510.064, 896.586, 574.017, 958.334, 573.282, 959.069, 510.064 ), PoolVector2Array( 801.158, 458.05, 781.256, 456.723, 780.592, 568.841, 813.763, 567.514, 814.427, 456.723, 795.851, 459.377 ), PoolVector2Array( 664.212, 508.628, 637.137, 509.53, 637.137, 573.607, 698.507, 574.51, 698.507, 509.53 ), PoolVector2Array( 547.79, 461.697, 525.227, 461.697, 527.032, 560.07, 556.815, 560.972, 555.01, 460.795 ), PoolVector2Array( 397.481, 515.324, 441.266, 518.641, 441.93, 567.734, 390.183, 573.041, 388.193, 517.977 ), PoolVector2Array( 282.641, 462.201, 301.88, 463.528, 301.217, 565.032, 275.343, 562.378, 277.333, 462.201 ), PoolVector2Array( 119.929, 514.349, 69.2076, 513.614, 72.883, 580.507, 124.339, 577.567 ), PoolVector2Array( 153.136, 70.6439, 133.896, 72.6342, 133.233, 126.371, 187.633, 129.025, 187.633, 72.6342 ) ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" index="0"]
 
 [node name="Navigation2D" type="Navigation2D" parent="." index="0"]
 
@@ -296,6 +297,8 @@ position = Vector2( 160.889, 287.246 )
 [node name="Guard4" parent="Guards" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 2054.79, 105.733 )
+
+[node name="CombinationGenerator" parent="." index="9" instance=ExtResource( 14 )]
 
 [connection signal="timeout" from="VisionMode/Timer" to="VisionMode" method="_on_Timer_timeout"]
 
