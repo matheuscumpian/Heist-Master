@@ -30,6 +30,7 @@ func Player_is_on_fov(): #Check if the player is on the security camera Field of
 	if abs(Direction_to_player.angle_to(NPC_facing_direction)) < deg2rad(FOV_TOLERANCE) and Player_is_on_LOS():
 		
 		$Lanterna.color = Color(1,0,0,0.5)
+		get_tree().call_group("Suspeita","player_sendo_visto")
 		
 	else:
 		
@@ -45,6 +46,10 @@ func Player_is_on_LOS(): # Check if the player is on the security camera Line of
 	
 	#with all the objects that has been setted on the collision mask of the node.
 	var LOS_Obstacle = space.intersect_ray(global_position,Player.global_position,[self],collision_mask) 
+	
+	
+	if !LOS_Obstacle:
+		return false
 	
 	var distance_to_player = Player.global_position.distance_to(global_position)
 	

@@ -76,6 +76,7 @@ func make_path():
 	#next_destination vai ser uma position2d pega aleatoriamente dentro do array de positions2d
 	
 	path = navigation.get_simple_path(global_position, next_destination.global_position,false)
+	
 	#get_simple_path vai dar um caminho para o personagem, a partir de onde ele está até o next_destination
 	pass
 

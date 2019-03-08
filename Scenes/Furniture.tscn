@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=1]
 
@@ -7,26 +7,51 @@
 custom_solver_bias = 0.0
 extents = Vector2( 27.4088, 26.5293 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=2]
 
-custom_solver_bias = 0.0
-extents = Vector2( 91.9999, 29 )
+closed = true
+cull_mode = 1
+polygon = PoolVector2Array( -12.9532, -22.9917, -27.9175, -24.7522, 15.2148, -24.3121, 24.8975, -26.5127, 27.5382, 11.7781, 13.8944, 24.5417, -14.2736, 23.6615, -27.0372, 14.4189, -28.7977, -23.872 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
+extents = Vector2( 91.9999, 29 )
+
+[sub_resource type="OccluderPolygon2D" id=4]
+
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -92.9865, -29.3912, 92.7209, -29.3912, 92.3974, 28.8446, -93.9571, 29.8152 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
 extents = Vector2( 50.5933, 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="OccluderPolygon2D" id=6]
+
+closed = true
+cull_mode = 1
+polygon = PoolVector2Array( -50.8314, -7.69819, -22.0371, -7.69819, -4.2428, -13.8453, 17.1103, -10.2864, 20.6692, -8.66879, 47.8459, -7.69819, 49.14, 2.65484, 39.7576, 3.62544, 38.787, 6.86076, 20.9927, 8.15488, -4.2428, 12.3608, -19.1253, 8.80195, -40.4784, 8.15488, -40.1549, 3.3019, -48.8902, 2.97837 )
+
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 89.7757, 18.9898 )
 
+[sub_resource type="OccluderPolygon2D" id=8]
+
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -90.172, -15.4793, -81.1131, -20.9794, 80.0059, -20.3323, 88.4178, -14.8323, 89.7118, 17.8445, 85.506, 21.7269, -85.6426, 21.4034, -89.8485, 18.4916 )
+
 [node name="Forniture" type="Node2D"]
+
+position = Vector2( 0, -0.902466 )
 
 [node name="PoltronaLaranja" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 1088, 1088, 64, 64 )
@@ -50,9 +75,13 @@ bounce = 0.0
 visible = false
 shape = SubResource( 1 )
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="PoltronaLaranja" index="1"]
+
+occluder = SubResource( 2 )
+light_mask = 1
+
 [node name="Mesa" type="Sprite" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 158.84, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -75,11 +104,15 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mesa/StaticBody2D" index="0"]
 
 visible = false
-shape = SubResource( 2 )
+shape = SubResource( 3 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Mesa" index="1"]
+
+occluder = SubResource( 4 )
+light_mask = 1
 
 [node name="Televisao" type="Sprite" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 321.095, -0.663422 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -102,11 +135,15 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Televisao/StaticBody2D" index="0"]
 
 visible = false
-shape = SubResource( 3 )
+shape = SubResource( 5 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Televisao" index="1"]
+
+occluder = SubResource( 6 )
+light_mask = 1
 
 [node name="Sofa" type="Sprite" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 483.817, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -129,6 +166,11 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sofa/StaticBody2D" index="0"]
 
 visible = false
-shape = SubResource( 4 )
+shape = SubResource( 7 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sofa" index="1"]
+
+occluder = SubResource( 8 )
+light_mask = 1
 
 

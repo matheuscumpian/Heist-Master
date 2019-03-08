@@ -1,0 +1,177 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Tilesets/Floor.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/LockedDoor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Characters/SecurityCamera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tilesets/tilemap.tres" type="TileSet" id=5]
+[ext_resource path="res://Tilesets/Forniture.tres" type="TileSet" id=6]
+[ext_resource path="res://Scenes/Computer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/ExitGame.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Briefcase.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/VisionMode.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=13]
+
+[node name="Node2D" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Floor" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 0
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 17, 0, 1, 17, 0, 2, 17, 0, 3, 14, 0, 4, 14, 0, 5, 17, 0, 6, 17, 0, 7, 17, 0, 8, 14, 0, 9, 17, 0, 10, 17, 0, 11, 17, 0, 12, 17, 0, 13, 14, 0, 14, 17, 0, 15, 17, 0, 16, 17, 0, 65536, 17, 0, 65537, 15, 0, 65538, 14, 0, 65539, 17, 0, 65540, 14, 0, 65541, 17, 0, 65542, 18, 0, 65543, 17, 0, 65544, 17, 0, 65545, 17, 0, 65546, 17, 0, 65547, 15, 0, 65548, 14, 0, 65549, 17, 0, 65550, 17, 0, 65551, 14, 0, 65552, 17, 0, 131072, 17, 0, 131073, 17, 0, 131074, 15, 0, 131075, 14, 0, 131076, 17, 0, 131077, 17, 0, 131078, 17, 0, 131079, 17, 0, 131080, 15, 0, 131081, 15, 0, 131082, 17, 0, 131083, 17, 0, 131084, 17, 0, 131085, 17, 0, 131086, 15, 0, 131087, 17, 0, 131088, 17, 0, 196608, 17, 0, 196609, 14, 0, 196610, 14, 0, 196611, 17, 0, 196612, 17, 0, 196613, 15, 0, 196614, 13, 0, 196615, 17, 0, 196616, 15, 0, 196617, 18, 0, 196618, 17, 0, 196619, 14, 0, 196620, 17, 0, 196621, 17, 0, 196622, 14, 0, 196623, 17, 0, 196624, 17, 0, 262144, 14, 0, 262145, 17, 0, 262146, 17, 0, 262147, 17, 0, 262148, 14, 0, 262149, 15, 0, 262150, 15, 0, 262151, 17, 0, 262152, 17, 0, 262153, 17, 0, 262154, 17, 0, 262155, 17, 0, 262156, 17, 0, 262157, 17, 0, 262158, 17, 0, 262159, 17, 0, 262160, 17, 0, 327680, 14, 0, 327681, 17, 0, 327682, 17, 0, 327683, 14, 0, 327684, 17, 0, 327685, 17, 0, 327686, 17, 0, 327687, 13, 0, 327688, 14, 0, 327689, 14, 0, 327690, 15, 0, 327691, 17, 0, 327692, 15, 0, 327693, 17, 0, 327694, 17, 0, 327695, 17, 0, 327696, 17, 0, 393216, 17, 0, 393217, 17, 0, 393218, 17, 0, 393219, 14, 0, 393220, 15, 0, 393221, 15, 0, 393222, 17, 0, 393223, 15, 0, 393224, 17, 0, 393225, 17, 0, 393226, 17, 0, 393227, 14, 0, 393228, 15, 0, 393229, 17, 0, 393230, 17, 0, 393231, 14, 0, 393232, 17, 0, 458752, 17, 0, 458753, 18, 0, 458754, 17, 0, 458755, 17, 0, 458756, 14, 0, 458757, 17, 0, 458758, 17, 0, 458759, 17, 0, 458760, 15, 0, 458761, 17, 0, 458762, 15, 0, 458763, 17, 0, 458764, 17, 0, 458765, 17, 0, 458766, 14, 0, 458767, 14, 0, 458768, 17, 0, 524288, 17, 0, 524289, 17, 0, 524290, 17, 0, 524291, 17, 0, 524292, 17, 0, 524293, 17, 0, 524294, 15, 0, 524295, 17, 0, 524296, 17, 0, 524297, 17, 0, 524298, 17, 0, 524299, 15, 0, 524300, 14, 0, 524301, 14, 0, 524302, 14, 0, 524303, 17, 0, 524304, 17, 0, 589824, 17, 0, 589825, 17, 0, 589826, 17, 0, 589827, 17, 0, 589828, 17, 0, 589829, 17, 0, 589830, 14, 0, 589831, 17, 0, 589832, 17, 0, 589833, 17, 0, 589834, 14, 0, 589835, 17, 0, 589836, 17, 0, 589837, 17, 0, 589838, 17, 0, 589839, 17, 0, 589840, 14, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Doors" type="Node2D" parent="." index="1"]
+
+[node name="Door" parent="Doors" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 992, 416 )
+
+[node name="Door4" parent="Doors" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 608, 384 )
+
+[node name="Door2" parent="Doors" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 352, 288 )
+
+[node name="Door3" parent="Doors" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 96, 288 )
+
+[node name="LockedDoors" type="Node2D" parent="Doors" index="4"]
+
+[node name="LockedDoor" parent="Doors/LockedDoors" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 672, 160 )
+
+[node name="Cameras" type="Node2D" parent="." index="2"]
+
+[node name="SecurityCamera" parent="Cameras" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 448.233, 225.62 )
+
+[node name="Walls" type="TileMap" parent="." index="3"]
+
+mode = 0
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 2
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 0, 262153, 1, 0, 262155, 2, 0, 262155, 3, 0, 262155, 4, 0, 262156, 5, 0, 262155, 6, 0, 262155, 7, 0, 262155, 8, 0, 262155, 9, 0, 262155, 10, 0, 262155, 11, 0, 262155, 12, 0, 262155, 13, 0, 262155, 14, 0, 262155, 15, 0, 262155, 16, 0, 262154, 65536, 0, 327691, 65540, 0, 327691, 65552, 0, 327691, 131072, 0, 327691, 131076, 0, 327691, 131078, 0, 262153, 131079, 0, 262155, 131080, 0, 262155, 131081, 0, 262158, 131083, 0, 327695, 131084, 0, 262155, 131085, 0, 262155, 131086, 0, 262154, 131088, 0, 327691, 196608, 0, 327691, 196612, 0, 327691, 196614, 0, 327691, 196622, 0, 327691, 196624, 0, 327691, 262144, 0, 327691, 262146, 0, 262153, 262147, 0, 262155, 262148, 0, 327690, 262150, 0, 327689, 262151, 0, 262155, 262152, 0, 262156, 262153, 0, 262155, 262154, 0, 262155, 262155, 0, 262155, 262156, 0, 262155, 262157, 0, 262155, 262158, 0, 327690, 262160, 0, 327691, 327680, 0, 327691, 327682, 0, 327691, 327688, 0, 327691, 327696, 0, 327691, 393216, 0, 327691, 393218, 0, 327691, 393224, 0, 327691, 393226, 0, 262153, 393227, 0, 262155, 393228, 0, 262155, 393229, 0, 262155, 393230, 0, 262158, 393232, 0, 327691, 458752, 0, 327691, 458754, 0, 327689, 458755, 0, 262155, 458756, 0, 262155, 458757, 0, 262155, 458758, 0, 262155, 458759, 0, 262155, 458760, 0, 327690, 458762, 0, 327691, 458768, 0, 327691, 524288, 0, 327691, 524298, 0, 327691, 524304, 0, 327691, 589824, 0, 327689, 589825, 0, 262155, 589826, 0, 262155, 589827, 0, 262155, 589828, 0, 262155, 589829, 0, 262155, 589830, 0, 262155, 589831, 0, 262155, 589832, 0, 262155, 589833, 0, 262155, 589834, 0, 262157, 589835, 0, 262155, 589836, 0, 262155, 589837, 0, 262155, 589838, 0, 262155, 589839, 0, 262155, 589840, 0, 327690 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Furniture" type="TileMap" parent="." index="4"]
+
+mode = 0
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 0
+collision_mask = 9
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 524300, -1073741824, 0 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Computers" type="Node2D" parent="." index="5"]
+
+position = Vector2( -32, 32 )
+
+[node name="Computer" parent="Computers" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( 736, 512 )
+lock_group = "Cofre"
+
+[node name="Exit" parent="." index="6" instance=ExtResource( 8 )]
+
+margin_left = 240.0
+margin_top = 320.0
+margin_right = 491.0
+margin_bottom = 452.0
+rect_scale = Vector2( 0.9, 0.9 )
+_sections_unfolded = [ "Mouse", "Rect" ]
+
+[node name="Briefcase" parent="." index="7" instance=ExtResource( 9 )]
+
+position = Vector2( 672, 226.914 )
+
+[node name="CombinationGenerator" parent="." index="8" instance=ExtResource( 10 )]
+
+[node name="VisionMode" parent="." index="9" instance=ExtResource( 11 )]
+
+color = Color( 0.0332683, 0.0205078, 0.164063, 1 )
+
+[node name="Player" parent="." index="10" instance=ExtResource( 12 )]
+
+position = Vector2( 151, 158 )
+collision_mask = 14
+
+[node name="Camera2D" type="Camera2D" parent="Player" index="6"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Smoothing" ]
+
+[node name="GUI" parent="." index="11" instance=ExtResource( 13 )]
+
+[connection signal="combination" from="Computers/Computer" to="Doors/LockedDoors/LockedDoor" method="_on_Computer_combination"]
+
+

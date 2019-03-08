@@ -7,7 +7,9 @@ var can_switch = true
 var cooldown = 10
 var call_cooldown = false
 func _ready():
+	
 	add_to_group("interface")
+	get_tree().call_group("label","hide_label")
 	Global.visionmode = self
 	color = DARK
 	pass
@@ -25,6 +27,7 @@ func switch_signal():
 		$On_Sound.play()
 		$Timer.start()
 		get_tree().call_group("NPC","lanterna")
+		get_tree().call_group("label","hide_label")
 
 
 func _on_Timer_timeout():
@@ -32,6 +35,7 @@ func _on_Timer_timeout():
 	$Off_Sownd.play()
 	color = DARK
 	get_tree().call_group("NPC","lanterna")
+	get_tree().call_group("label","hide_label")
 	pass 
 
 

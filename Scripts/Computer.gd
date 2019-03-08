@@ -2,11 +2,16 @@ extends Area2D
 
 var combination
 var can_click = false
-
+signal combination
+export var lock_group = "Unset"
 func _ready():
 	
 	$Light2D.enabled = false
 	generate_combination()
+	emit_signal("combination",combination,lock_group)
+	$Label.rect_rotation = -rad2deg(global_rotation)
+	$Label.text = lock_group
+	add_to_group("label")
 	pass
 
 func generate_combination():
@@ -46,6 +51,14 @@ func set_popup_text():
 	
 	pass
 
+func hide_label():
+	
+	if $Label.visible:
+		$Label.visible = false
+	elif !$Label.visible:
+		$Label.visible = true
+	
+	pass
 
 
 

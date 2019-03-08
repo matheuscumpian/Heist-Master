@@ -5,8 +5,9 @@ var combination = [4,1,5]
 
 func _ready():
 	connect("exited",self,"on_player_exited")
-	$CanvasLayer/Numberpad.combination = combination
 	setTypeOfDoor()
+	$Label.rect_rotation = -rad2deg(global_rotation)
+	add_to_group("label")
 	pass
 	
 	
@@ -29,4 +30,20 @@ func on_player_exited():
 
 func _on_Numberpad_correct_password():
 	open()
-	pass # replace with function body
+	pass 
+
+
+func _on_Computer_combination(combination, lock_group):
+	self.combination = combination
+	$CanvasLayer/Numberpad.combination = combination
+	$Label.text = lock_group
+	pass
+func hide_label():
+	
+	if $Label.visible:
+		$Label.visible = false
+	elif !$Label.visible:
+		$Label.visible = true
+	
+	pass
+
