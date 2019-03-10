@@ -6,10 +6,8 @@ var destinations
 var visionmode
 var GUI
 var DisguisesDisplay
-func _ready():
-	
-	pass
-	
+
+var text_file = "res://Scripts/TutorialText.json"
 var player_sprite = "res://GFX/PNG/Hitman 1/hitman1_stand.png"
 var box_sprite = "res://GFX/PNG/Tiles/tile_129.png"
 var player_occluder = "res://Scenes/Characters/CharacterOccluder.tres"

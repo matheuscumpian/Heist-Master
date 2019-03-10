@@ -1,6 +1,6 @@
 extends CanvasModulate
 
-const DARK = Color("171340")
+const DARK = Color("0f00ab")
 const NIGHT_VISION = Color("1bcf10")
 
 var can_switch = true

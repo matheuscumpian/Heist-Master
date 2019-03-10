@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 31.6778, 29.5585 )
+extents = Vector2( 46.9997, 40.3235 )
 
 [node name="Computer" type="Area2D"]
 
@@ -33,7 +33,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-visible = false
 position = Vector2( 33.0003, 0.323532 )
 shape = SubResource( 1 )
 
